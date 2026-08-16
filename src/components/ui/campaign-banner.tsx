@@ -49,7 +49,7 @@ export function CampaignBanner({
           {headline}
         </h2>
         <Link
-          to={ctaLink}
+          to={ctaLink as never}
           className="inline-block border border-white px-8 py-3 font-sans text-xs font-medium uppercase tracking-widest text-white transition-colors duration-300 hover:bg-white hover:text-ink"
         >
           {cta}
