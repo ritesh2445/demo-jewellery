@@ -1,9 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { heroBridal } from "@/data/images";
 
 export function VideoSection() {
   return (
-    <section className="relative h-[70vh] overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-stone-950 md:h-[85vh]">
+    <section className="relative h-[70vh] overflow-hidden bg-ink md:h-[85vh]">
+      <img
+        src={heroBridal}
+        alt="Bridal jewellery campaign"
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30" />
       <motion.div
         initial={{ opacity: 0, y: 24 }}

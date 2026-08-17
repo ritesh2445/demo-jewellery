@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { getProduct } from "@/data/products";
-import { JewelSilhouette, MediaPlaceholder } from "@/components/ui/media-placeholder";
+import { MediaPlaceholder } from "@/components/ui/media-placeholder";
+import { productImage } from "@/data/images";
 import { imageReveal } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 
@@ -26,9 +27,12 @@ function Feature({
       )}
     >
       <motion.div {...imageReveal} className="w-full md:w-1/2">
-        <MediaPlaceholder gradient={product.gradient} aspectRatio="aspect-[4/5]">
-          <JewelSilhouette />
-        </MediaPlaceholder>
+        <MediaPlaceholder
+          gradient={product.gradient}
+          src={productImage(product.slug)}
+          alt={product.name}
+          aspectRatio="aspect-[4/5]"
+        />
       </motion.div>
 
       <motion.div
