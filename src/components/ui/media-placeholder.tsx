@@ -3,15 +3,23 @@ import { cn } from "@/lib/utils";
 
 interface MediaPlaceholderProps {
   gradient: string;
+  src?: string;
+  alt?: string;
+  eager?: boolean;
   aspectRatio?: string;
   className?: string;
+  imageClassName?: string;
   children?: ReactNode;
 }
 
 export function MediaPlaceholder({
   gradient,
+  src,
+  alt = "",
+  eager = false,
   aspectRatio = "aspect-square",
   className,
+  imageClassName,
   children,
 }: MediaPlaceholderProps) {
   return (
@@ -23,6 +31,15 @@ export function MediaPlaceholder({
         className,
       )}
     >
+      {src && (
+        <img
+          src={src}
+          alt={alt}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+          className={cn("absolute inset-0 h-full w-full object-cover", imageClassName)}
+        />
+      )}
       {children}
     </div>
   );

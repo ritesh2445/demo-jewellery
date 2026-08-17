@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { collections } from "@/data/collections";
+import { collectionImages } from "@/data/images";
 import { cn } from "@/lib/utils";
 
 export function CollectionShowcase() {
@@ -18,7 +19,13 @@ export function CollectionShowcase() {
             c.gradient,
           )}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+          <img
+            src={collectionImages[c.slug]}
+            alt={`${c.name} collection`}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

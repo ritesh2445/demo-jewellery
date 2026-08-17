@@ -1,33 +1,31 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export function ProductImageViewer({
   open,
   onOpenChange,
   name,
-  gradients,
+  images,
   index,
   setIndex,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
   name: string;
-  gradients: string[];
+  images: string[];
   index: number;
   setIndex: (i: number) => void;
 }) {
-  const go = (n: number) => setIndex((n + gradients.length) % gradients.length);
+  const go = (n: number) => setIndex((n + images.length) % images.length);
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="h-screen w-screen max-w-none rounded-none border-0 bg-white p-0">
         <DialogTitle className="sr-only">{name}</DialogTitle>
         <div className="relative flex h-full items-center justify-center p-6 md:p-16">
-          <div
-            className={cn(
-              "aspect-[3/4] h-full max-h-full w-auto max-w-full bg-gradient-to-br",
-              gradients[index],
-            )}
+          <img
+            src={images[index]}
+            alt={name}
+            className="max-h-full max-w-full object-contain"
           />
           <button
             aria-label="Previous image"
