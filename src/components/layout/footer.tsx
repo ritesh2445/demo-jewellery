@@ -69,6 +69,13 @@ export function Footer() {
             © 2026 Tanishq Jewellers Ghatanji. All rights reserved.
           </p>
         </div>
+
+        <div className="mt-6 border-t border-border pt-4 text-center">
+          <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-muted/60">
+            Crafted by{" "}
+            <span className="text-muted">NXC Badge India</span>
+          </p>
+        </div>
       </div>
     </footer>
   );
