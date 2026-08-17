@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import type { Product } from "@/data/products";
-import { JewelSilhouette, MediaPlaceholder } from "./media-placeholder";
+import { productImage } from "@/data/images";
+import { MediaPlaceholder } from "./media-placeholder";
 import { cn } from "@/lib/utils";
 
 export function ProductCard({
@@ -12,28 +12,22 @@ export function ProductCard({
   wide?: boolean;
 }) {
   return (
-    <Link
-      to="/product/$slug"
-      params={{ slug: product.slug }}
-      className="group block"
-    >
-      <div className="overflow-hidden">
-        <motion.div
-          whileHover={{ scale: 1.04 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+    <Link to="/product/$slug" params={{ slug: product.slug }} className="group block">
+      <div className="relative overflow-hidden bg-surface">
+        <MediaPlaceholder
+          gradient={product.gradient}
+          src={productImage(product.slug)}
+          alt={`${product.name} — ${product.material}`}
+          aspectRatio={wide ? "aspect-[3/2]" : "aspect-[4/5]"}
+          imageClassName="transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
         >
-          <MediaPlaceholder
-            gradient={product.gradient}
-            aspectRatio={wide ? "aspect-[3/2]" : "aspect-[4/5]"}
-          >
-            <JewelSilhouette />
-            {product.newArrival && (
-              <span className="absolute left-4 top-4 font-sans text-[10px] uppercase tracking-[0.2em] text-gold">
-                New
-              </span>
-            )}
-          </MediaPlaceholder>
-        </motion.div>
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          {product.newArrival && (
+            <span className="absolute left-4 top-4 bg-white/90 px-2.5 py-1 font-sans text-[10px] uppercase tracking-[0.2em] text-ink">
+              New
+            </span>
+          )}
+        </MediaPlaceholder>
       </div>
       <div className="pt-4">
         <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-gold">
