@@ -14,7 +14,6 @@ export const fadeIn = {
 
 export const imageReveal = {
   initial: { clipPath: "inset(0 0 100% 0)" },
-  whileInView: { clipPath: "inset(0 0 0% 0)" },
-  viewport: { once: true, amount: 0.01 },
+  animate: { clipPath: "inset(0 0 0% 0)" },
   transition: { duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] },
 } as const;
