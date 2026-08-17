@@ -155,11 +155,55 @@
 html,
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @layer base {
   body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
+
+  /* Better mobile tap targets */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent layout shift from images */
+  img {
+    image-rendering: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  section {
+    max-width: 100vw;
+  }
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4c4a0;
+  border-radius: 3px;
+}
+
+/* Font display optimization */
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-display: swap;
 }

@@ -14,10 +14,10 @@ const links = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 py-16 md:px-8 md:py-20">
-        <div className="grid gap-12 md:grid-cols-3">
+      <div className="mx-auto max-w-screen-xl px-5 py-12 md:px-8 md:py-20">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
           <div>
-            <p className="font-sans text-xs font-medium uppercase tracking-[0.22em] text-ink">
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.22em] text-ink">
               Tanishq Jewellers
             </p>
             <p className="mt-2 font-sans text-xs uppercase tracking-widest text-muted">
@@ -37,7 +37,7 @@ export function Footer() {
             ))}
           </nav>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1">
             <a
               href={site.instagram}
               target="_blank"
@@ -63,10 +63,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-2 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
           <p className="font-sans text-xs font-light text-muted">{site.address}</p>
           <p className="font-sans text-xs font-light text-muted">
-            © 2024 Tanishq Jewellers Ghatanji. All rights reserved.
+            © 2026 Tanishq Jewellers Ghatanji. All rights reserved.
           </p>
         </div>
       </div>

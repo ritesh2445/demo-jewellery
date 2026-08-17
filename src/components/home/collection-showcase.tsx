@@ -15,7 +15,7 @@ export function CollectionShowcase() {
           to="/collection/$category"
           params={{ category: c.slug }}
           className={cn(
-            "group relative flex h-[55vh] items-end overflow-hidden bg-gradient-to-br md:h-[65vh]",
+            "group relative flex h-[45vh] items-end overflow-hidden bg-gradient-to-br sm:h-[55vh] md:h-[65vh]",
             c.gradient,
           )}
         >
@@ -31,12 +31,12 @@ export function CollectionShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            className="relative p-8 md:p-12"
+            className="relative p-6 md:p-12"
           >
-            <p className="font-sans text-xs uppercase tracking-[0.25em] text-white/60">
+            <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-white/60 md:text-xs">
               {c.tagline}
             </p>
-            <h3 className="mt-4 font-serif text-4xl font-light text-white md:text-5xl">
+            <h3 className="mt-3 font-serif text-3xl font-light text-white sm:text-4xl md:mt-4 md:text-5xl">
               {c.name}
             </h3>
             <span className="mt-6 inline-flex items-center gap-2 font-sans text-xs font-medium uppercase tracking-widest text-white">

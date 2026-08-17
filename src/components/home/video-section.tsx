@@ -4,7 +4,7 @@ import { heroBridal } from "@/data/images";
 
 export function VideoSection() {
   return (
-    <section className="relative h-[70vh] overflow-hidden bg-ink md:h-[85vh]">
+    <section className="relative h-[55vh] overflow-hidden bg-ink sm:h-[65vh] md:h-[85vh]">
       <img
         src={heroBridal}
         alt="Bridal jewellery campaign"
@@ -19,10 +19,10 @@ export function VideoSection() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative flex h-full flex-col items-center justify-center px-4 text-center"
       >
-        <p className="font-sans text-xs uppercase tracking-[0.25em] text-white/60">
+        <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-white/60 md:text-xs">
           The Collection
         </p>
-        <h2 className="mt-6 max-w-2xl font-serif text-4xl font-light leading-tight text-white md:text-6xl">
+        <h2 className="mt-4 max-w-2xl font-serif text-3xl font-light leading-tight text-white sm:text-4xl md:mt-6 md:text-6xl">
           Discover The Details.
         </h2>
         <Link

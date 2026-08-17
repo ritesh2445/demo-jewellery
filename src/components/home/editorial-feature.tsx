@@ -22,7 +22,7 @@ function Feature({
   return (
     <div
       className={cn(
-        "mx-auto flex min-h-[80vh] max-w-screen-xl flex-col items-center gap-10 px-4 py-16 md:flex-row md:gap-16 md:px-8",
+        "mx-auto flex max-w-screen-xl flex-col items-center gap-8 px-5 py-12 md:min-h-[80vh] md:flex-row md:gap-16 md:px-8 md:py-16",
         reverse && "md:flex-row-reverse",
       )}
     >
@@ -42,14 +42,14 @@ function Feature({
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         className="w-full md:w-1/2"
       >
-        <p className="font-sans text-xs uppercase tracking-[0.25em] text-gold">{index}</p>
-        <h2 className="mt-6 font-serif text-4xl font-light leading-tight tracking-tight text-ink md:text-6xl">
+        <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-gold md:text-xs">{index}</p>
+        <h2 className="mt-4 font-serif text-3xl font-light leading-tight tracking-tight text-ink sm:text-4xl md:mt-6 md:text-5xl lg:text-6xl">
           {product.name}
         </h2>
-        <p className="mt-4 font-sans text-xs uppercase tracking-widest text-muted">
+        <p className="mt-3 font-sans text-xs uppercase tracking-widest text-muted md:mt-4">
           {product.material}
         </p>
-        <p className="mt-6 max-w-md font-sans text-sm font-light leading-relaxed text-muted">
+        <p className="mt-5 max-w-md font-sans text-sm font-light leading-relaxed text-muted md:mt-6">
           {product.description}
         </p>
         <Link

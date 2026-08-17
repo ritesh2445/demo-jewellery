@@ -39,7 +39,7 @@ export function Navbar() {
       <div className="mx-auto flex h-full max-w-screen-xl items-center justify-between gap-4 px-4 md:px-8">
         <Link
           to="/"
-          className="min-w-0 shrink-0 font-sans text-xs font-medium uppercase tracking-[0.22em] text-ink"
+          className="min-w-0 shrink-0 font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-ink md:text-xs"
         >
           Tanishq Jewellers
         </Link>
@@ -92,14 +92,14 @@ export function Navbar() {
               side="right"
               className="w-screen max-w-none border-0 bg-white p-8"
             >
-              <SheetTitle className="font-sans text-xs uppercase tracking-[0.22em] text-muted">
+              <SheetTitle className="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-muted">
                 Menu
               </SheetTitle>
               <motion.nav
                 initial="hidden"
                 animate="show"
                 variants={{ show: { transition: { staggerChildren: 0.06 } } }}
-                className="mt-12 flex flex-col gap-6"
+                className="mt-10 flex flex-col gap-5"
               >
                 {navLinks.map((l) => (
                   <motion.div
@@ -112,7 +112,7 @@ export function Navbar() {
                     <Link
                       to={l.to as never}
                       onClick={() => setMenuOpen(false)}
-                      className="font-serif text-4xl font-light text-ink"
+                      className="font-serif text-[clamp(2.25rem,8vw,3.5rem)] font-light leading-tight text-ink"
                     >
                       {l.label}
                     </Link>

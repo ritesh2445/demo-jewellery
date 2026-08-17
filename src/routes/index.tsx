@@ -9,7 +9,6 @@ import { CampaignBanner } from "@/components/ui/campaign-banner";
 import { CollectionShowcase } from "@/components/home/collection-showcase";
 import { EditorialFeature } from "@/components/home/editorial-feature";
 import { VideoSection } from "@/components/home/video-section";
-import { InstagramStrip } from "@/components/home/instagram-strip";
 import { VisitTeaser } from "@/components/home/visit-teaser";
 import { SectionLabel } from "@/components/ui/section-label";
 import { ProductCard } from "@/components/ui/product-card";
@@ -49,15 +48,15 @@ function Index() {
       <EditorialFeature />
       <VideoSection />
 
-      <section className="py-20 md:py-28">
-        <motion.div {...fadeUp} className="mx-auto max-w-screen-xl px-4 md:px-8">
+      <section className="py-14 md:py-28">
+        <motion.div {...fadeUp} className="mx-auto max-w-screen-xl px-5 md:px-8">
           <SectionLabel>Explore the collection</SectionLabel>
-          <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4 md:gap-x-6 md:gap-y-16">
+          <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-6 md:gap-y-16">
             {products.slice(0, 8).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
-          <div className="mt-14 text-right">
+          <div className="mt-10 text-right md:mt-14">
             <Link
               to="/collection"
               className="group inline-flex items-center gap-2 font-sans text-xs font-medium uppercase tracking-widest text-ink"
@@ -73,7 +72,6 @@ function Index() {
         </motion.div>
       </section>
 
-      <InstagramStrip />
       <VisitTeaser />
     </Layout>
   );
